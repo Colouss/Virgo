@@ -39,6 +39,7 @@ class vtables:
         self.read_filaments()
         self.read_magphys()
         self.read_paper1()
+        self.read_arcsecH()
         #except FileNotFoundError:
         #    print("WARNING: magphys file not found (this is probably ok)")
         try:
@@ -185,11 +186,15 @@ class vtables:
         ''' read in extinction table '''
         self.extinct = Table.read(self.tabledir+self.tableprefix+'extinction.fits')        
         pass
+
     #added by GHR on 17.April.2023
     def read_ephot(self):
         ''' read in elliptical aperture photometry from John '''
         self.ephot = Table.read(self.tabledir+self.tableprefix+'legacy_ephot.fits')        
         pass
+    def read_arcsecH(self):
+        ''' read in main table; store as self.main  '''
+        self.arcsecH = Table.read(self.tabledir+self.tableprefix+'arcsecH.fits')
         
 
 if __name__ == '__main__':
