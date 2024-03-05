@@ -194,7 +194,7 @@ class vtables:
         pass
     def read_arcsecH(self):
         ''' read in main table; store as self.main  '''
-        self.arcsecH = Table.read(self.tabledir+self.tableprefix+'arcsecH.fits')
+        self.arcsecH = Table.read(self.tabledir+self.tableprefix+'arcsecH.csv')
         
 
 if __name__ == '__main__':
